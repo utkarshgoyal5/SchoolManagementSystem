@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useEffect } from "react";
+import Header from './components/Header';
+import { ToastContainer, toast } from 'react-toastify';
+import { Button, Container } from 'reactstrap';
+import Body from './components/Body';
+import base64 from 'react-native-base64'
 
 function App() {
+
+  // let timmer = 8000;
+
+  // const encodedString = base64.encode('Some string to encode to base64');
+  // const success = () => toast.success(encodedString, {position: toast.POSITION.TOP_CENTER, autoClose: timmer});
+
+  useEffect(() => {
+    document.title = `SCHOOL MANAGEMENT SYSTEM`
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Container>
+          <Header />
+          <Body />
+          {/* <ToastContainer  pauseOnFocusLoss={timmer} limit={3} /> */}
+          {/* <Button onClick = {success}></Button> */}
+      </Container>
+    
   );
 }
 
